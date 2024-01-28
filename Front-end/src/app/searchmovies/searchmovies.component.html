@@ -1,0 +1,17 @@
+<div class="d-flex m-3" style="padding: 10px; height: 100%;width: 100%; align-items: center; justify-content: center;padding: 10px;">
+    <input type="text" placeholder="search for an movie " style="margin-right: 10px;border:none;border-radius: 50px;box-shadow: inset;" [(ngModel)]="inputValue">
+    <button class="btn btn-success" [routerLink]="['/search', inputValue ]">search</button>
+</div>
+<div class=" row ">
+    <div *ngFor="let movie of array " class="col-md-4 ">
+        <div class="card " style="width: 18rem; margin: 10px; ">
+            <img [src]="movie.poster_path " alt="{{ movie.title }} " class="card-img-top ">
+            <div class="card-body ">
+                <h5 class="card-title ">{{ movie.title }}</h5>
+                <button [routerLink]="['/pagedetails',movie.title]" class="btn btn-primary " (click)="moredetails(movie)"> more details</button>
+                <img src="../../assets/images/favourite.png" alt="" srcset="" width="25px" style="margin-left: 100px;">
+            </div>
+        </div>
+
+    </div>
+</div>
